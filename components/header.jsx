@@ -16,7 +16,7 @@ const Header = () => {
             width={200}
             quality={100}
             priority={true}
-            className="h-12 w-auto object-contain"
+            className="h-12 w-auto object-contain rounded-2xl"
           />
         </Link>
         <div className="flex items-center space-x-4">
