@@ -1,10 +1,34 @@
 "use client";
 
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
 const HeroSection = () => {
+  const imageRef = useRef();
+
+  useEffect(() => {
+    const imageElement = imageRef.current;
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 100;
+
+      if(scrollPosition > scrollThreshold) {
+        imageElement.classList.add("scrolled");
+      } else {
+        imageElement.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="pd-20 px-4">
       <div className="container mx-auto text-center">
@@ -16,7 +40,7 @@ const HeroSection = () => {
           SpendSmart is a simple and easy-to-use expense tracker that helps you
           manage your money with ease.
         </p>
-        <div>
+        <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
             <Button size="lg" className="px-8">
               Get Started
@@ -28,8 +52,8 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
-        <div>
-          <div>
+        <div className="hero-image-wrapper">
+          <div ref={imageRef} className="hero-image">
             <Image
               src="/banner.png"
               alt="banner"
