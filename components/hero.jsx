@@ -57,12 +57,13 @@ const HeroSection = () => {
             <Image
               src="/banner.png"
               alt="banner"
-              width={1280}
-              height={720}
+              width={1160}
+              height={650}
               quality={100}
               priority={true}
               className="rounded-3xl shadow-3xl border mx-auto"
             />
+            
           </div>
         </div>
       </div>
