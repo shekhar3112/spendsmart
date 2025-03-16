@@ -30,44 +30,45 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="pd-20 px-4">
-      <div className="container mx-auto text-center">
-        <h1 className="text-5xl md:text-8xl lg:text-[105px] pb-6 gradient-title">
-          Manage your money
-          <br /> with Intelligence
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          SpendSmart is a simple and easy-to-use expense tracker that helps you
-          manage your money with ease.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <Link href="/dashboard">
-            <Button size="lg" className="px-8">
-              Get Started
-            </Button>
-          </Link>
-          <Link href="/">
-            <Button size="lg" variant="outline" className="px-8">
-              Watch Demo
-            </Button>
-          </Link>
-        </div>
-        <div className="hero-image-wrapper">
-          <div ref={imageRef} className="hero-image">
-            <Image
-              src="/banner.png"
-              alt="banner"
-              width={1160}
-              height={650}
-              quality={100}
-              priority={true}
-              className="rounded-3xl shadow-3xl border mx-auto"
-            />
-            
+    <section className="relative pb-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center">
+          <h1 className="text-5xl md:text-8xl lg:text-[105px] pb-6 gradient-title">
+            Manage your money
+            <br /> with Intelligence
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            SpendSmart is a simple and easy-to-use expense tracker that helps you
+            manage your money with ease.
+          </p>
+          <div className="flex justify-center space-x-4 mb-8">
+            <Link href="/dashboard">
+              <Button size="lg" className="px-8">
+                Get Started
+              </Button>
+            </Link>
+            <Link href="/">
+              <Button size="lg" variant="outline" className="px-8">
+                Watch Demo
+              </Button>
+            </Link>
+          </div>
+          <div className="hero-image-wrapper mt-4 mb-16">
+            <div ref={imageRef} className="hero-image">
+              <Image
+                src="/banner.png"
+                alt="banner"
+                width={1160}
+                height={550}
+                quality={100}
+                priority={true}
+                className="rounded-3xl shadow-3xl border mx-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
